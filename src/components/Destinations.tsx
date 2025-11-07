@@ -12,6 +12,11 @@ const destinations = [
     description: "God's Own Country - Backwaters & Beaches",
     image: keralaImg,
     popular: true,
+    package: {
+      duration: "5 Days / 4 Nights",
+      price: "₹18,999",
+      places: ["Munnar Tea Gardens", "Alleppey Backwaters", "Kochi Fort", "Thekkady Wildlife"]
+    }
   },
   {
     name: "Rajasthan",
@@ -77,7 +82,30 @@ const Destinations = () => {
                     <MapPin className="h-5 w-5 text-accent" />
                     <h3 className="text-2xl font-bold">{destination.name}</h3>
                   </div>
-                  <p className="text-white/90 mb-4">{destination.description}</p>
+                  <p className="text-white/90 mb-3">{destination.description}</p>
+                  
+                  {destination.package && (
+                    <div className="mb-4 space-y-2">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-white/80">Duration:</span>
+                        <span className="font-semibold">{destination.package.duration}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-white/80">Starting from:</span>
+                        <span className="font-bold text-accent text-lg">{destination.package.price}</span>
+                      </div>
+                      <div className="mt-3">
+                        <p className="text-xs text-white/70 mb-2">Key Places:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {destination.package.places.map((place) => (
+                            <span key={place} className="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">
+                              {place}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all">
                     Explore Now
