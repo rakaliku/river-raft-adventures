@@ -8,7 +8,7 @@ import goaImg from "@/assets/goa.jpg";
 import rajasthanImg from "@/assets/rajasthan.jpg";
 
 const FORMSPREE_URL = "https://formspree.io/f/xldarbbd";
-const WHATSAPP_NUMBER = "918639445239"; // ✅ Replace with your WhatsApp number (no + or spaces)
+const WHATSAPP_NUMBER = "917007839871"; // ✅ Replace with your WhatsApp number (no + or spaces)
 
 const destinations = [
   {
