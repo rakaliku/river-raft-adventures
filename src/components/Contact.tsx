@@ -4,10 +4,21 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
+const WHATSAPP_NUMBER = "917007839871"; // 👈 your WhatsApp number (no + or spaces)
+
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    // Handle form submission (you can integrate Formspree here later)
+  };
+
+  // 🧠 WhatsApp message logic
+  const handleWhatsAppChat = () => {
+    const message = encodeURIComponent(
+      "Hi! I’d like to know more about your travel packages and destinations. Can you help me plan my trip? 🌴"
+    );
+    const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+    window.open(link, "_blank");
   };
 
   return (
@@ -23,7 +34,7 @@ const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Contact Form */}
+          {/* ✉️ Contact Form */}
           <Card className="p-6 md:p-8 shadow-[var(--shadow-medium)] border-0 bg-card">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
@@ -80,7 +91,7 @@ const Contact = () => {
             </form>
           </Card>
 
-          {/* Contact Information */}
+          {/* 🏢 Contact Information */}
           <div className="space-y-6">
             <Card className="p-6 shadow-[var(--shadow-soft)] border-0 bg-card hover:shadow-[var(--shadow-medium)] transition-all duration-300">
               <div className="flex items-start gap-4">
@@ -90,7 +101,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Phone</h3>
                   <p className="text-muted-foreground">+91 7007839871</p>
-                  <p className="text-sm text-muted-foreground">Always on. Always vibing. 🌞</p>
+                  <p className="text-sm text-muted-foreground">
+                    Always on. Always vibing. 🌞
+                  </p>
                 </div>
               </div>
             </Card>
@@ -103,7 +116,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Email</h3>
                   <p className="text-muted-foreground">rahirovers@gmail.com</p>
-                  <p className="text-sm text-muted-foreground">Available 25/8 ✨ (because 24 isn’t enough)</p>
+                  <p className="text-sm text-muted-foreground">
+                    Available 25/8 ✨ (because 24 isn’t enough)
+                  </p>
                 </div>
               </div>
             </Card>
@@ -118,17 +133,23 @@ const Contact = () => {
                   <p className="text-muted-foreground">
                     New Delhi, India
                   </p>
-                  <p className="text-sm text-muted-foreground">Visit by appointment</p>
+                  <p className="text-sm text-muted-foreground">
+                    Visit by appointment
+                  </p>
                 </div>
               </div>
             </Card>
 
-            <div className="bg-accent/10 rounded-2xl p-6 border border-accent/20">
+            {/* 💬 Quick WhatsApp Inquiry */}
+            <div className="bg-orange-50 rounded-2xl p-6 border border-orange-200 text-center shadow-sm">
               <h3 className="font-bold text-lg mb-3">Quick Inquiry on WhatsApp</h3>
               <p className="text-sm text-muted-foreground mb-4">
                 Get instant responses to your travel queries
               </p>
-              <Button variant="secondary" className="w-full gap-2">
+              <Button
+                onClick={handleWhatsAppChat}
+                className="w-full gap-2 bg-orange-500 hover:bg-orange-600 text-white"
+              >
                 <Phone className="h-4 w-4" />
                 Chat on WhatsApp
               </Button>
