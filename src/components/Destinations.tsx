@@ -291,10 +291,22 @@ const Destinations = () => {
                     </button>
 
                     <button
-                      onClick={() => setSelected(null)}
-                      className="flex-1 px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition"
-                    >
-                      Close
+                    //   onClick={() => setSelected(null)}
+                    //   className="flex-1 px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition"
+                    // >
+                    //   Close
+                    onClick={() => window.open("https://ig.me/m/rahirovers", "_blank")}
+  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    className="h-5 w-5"
+  >
+    <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5A5.752 5.752 0 0 0 7.75 22h8.5A5.752 5.752 0 0 0 22 16.25v-8.5A5.752 5.752 0 0 0 16.25 2h-8.5Zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5Zm8.746 2.5c-.277 0-.498.22-.498.498v.004c0 .277.22.498.498.498h.004a.5.5 0 0 0 0-1h-.004Zm-4.996 1.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5Zm0 1.5a3.25 3.25 0 1 1 0 6.5 3.25 3.25 0 0 1 0-6.5Z" />
+  </svg>
+  DM on Instagram
                     </button>
                   </div>
                 </div>
