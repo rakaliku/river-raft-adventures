@@ -208,7 +208,7 @@ const CollegeEvents = () => {
               <Button
                 onClick={() =>
                   window.open(
-                    `https://wa.me/918639445239?text=Hi! I'm interested in joining the ${event.title} trip.`,
+                    `https://wa.me/917007839871?text=Hi! I'm interested in joining the ${event.title} trip.`,
                     "_blank"
                   )
                 }
