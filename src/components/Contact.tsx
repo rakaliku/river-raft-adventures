@@ -173,7 +173,7 @@ import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 const FORMSPREE_URL = "https://formspree.io/f/xldarbbd"; // 👈 same endpoint you used before
-const WHATSAPP_NUMBER = "918639445239"; // 👈 your WhatsApp number (no + or spaces)
+const WHATSAPP_NUMBER = "917007839871"; // 👈 your WhatsApp number (no + or spaces)
 
 const Contact = () => {
   const [successMsg, setSuccessMsg] = useState(false);
