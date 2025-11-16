@@ -12,13 +12,24 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
 
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        {/* <div className="flex items-center justify-between h-20"> */}
+        <div className="flex items-center justify-between h-28">
           {/* ✅ Logo and Brand */}
           <div className="flex items-center space-x-4">
             <img
               src={logo}
               alt="Rahi Rovers Logo"
-              className="w-16 h-16 object-contain mix-blend-multiply bg-transparent"
+              // className="w-16 h-16 object-contain mix-blend-multiply bg-transparent"
+              // className="w-20 h-20 object-contain mix-blend-darken bg-transparent transition-transform duration-300 hover:scale-105"
+              className="
+    w-14 h-14          /* mobile size */
+    md:w-28 md:h-28    /* desktop size */
+    object-contain 
+    mix-blend-darken 
+    bg-transparent
+    transition-transform duration-300 
+    hover:scale-105
+  "
   style={{
     filter: "drop-shadow(0 0 0 transparent)", // Removes glow
   }}
