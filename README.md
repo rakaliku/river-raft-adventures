@@ -1,73 +1,155 @@
-# Welcome to your Lovable project
+# Rahi Rovers
 
-## Project info
+Rahi Rovers is a responsive tours and travel website for exploring destinations, tour packages, and college events across India.
 
-**URL**: https://lovable.dev/projects/e4ec2990-fd37-480a-a429-9c5132267166
+## Tech stack
 
-## How can I edit this code?
+- React 18 with TypeScript
+- Vite 5
+- Tailwind CSS and shadcn/ui
+- React Router
+- TanStack Query
+- Vercel Analytics
 
-There are several ways of editing your application.
+## Prerequisites
 
-**Use Lovable**
+Install the following before setting up the project:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e4ec2990-fd37-480a-a429-9c5132267166) and start prompting.
+- [Node.js](https://nodejs.org/) 18 or newer
+- npm (included with Node.js)
+- Git
 
-Changes made via Lovable will be committed automatically to this repo.
+This project uses npm and `package-lock.json` for dependency management. Bun is not required.
 
-**Use your preferred IDE**
+## Local setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone the repository and enter the project directory:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```powershell
+git clone https://github.com/rakaliku/river-raft-adventures.git
+cd river-raft-adventures
+```
 
-Follow these steps:
+Install the exact dependency versions recorded in `package-lock.json`:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```powershell
+npm ci
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Start the development server:
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```powershell
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at [http://localhost:8080](http://localhost:8080). Vite automatically reloads the page when source files change.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available commands
 
-**Use GitHub Codespaces**
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server on port 8080 |
+| `npm run build` | Create an optimized production build in `dist/` |
+| `npm run build:dev` | Create a build using Vite's development mode |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint across the project |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To test a production build locally:
 
-## What technologies are used for this project?
+```powershell
+npm run build
+npm run preview
+```
 
-This project is built with:
+## Project structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```text
+river-raft-adventures/
+|-- public/                 Static files copied directly to the build
+|-- src/
+|   |-- assets/             Images and the Rahi Rovers logo
+|   |-- components/         Shared page sections and UI components
+|   |   `-- ui/             Reusable shadcn/ui components
+|   |-- hooks/              Shared React hooks
+|   |-- lib/                Utility functions
+|   |-- pages/              Route-level page components
+|   |-- App.tsx             Providers and application routes
+|   |-- index.css           Global styles and Tailwind layers
+|   `-- main.tsx            React application entry point
+|-- index.html              HTML shell, metadata, and favicon links
+|-- package.json            Scripts and dependencies
+|-- tailwind.config.ts      Tailwind theme configuration
+|-- tsconfig.json           TypeScript configuration
+`-- vite.config.ts          Vite configuration and path aliases
+```
 
-## How can I deploy this project?
+## Routes
 
-Simply open [Lovable](https://lovable.dev/projects/e4ec2990-fd37-480a-a429-9c5132267166) and click on Share -> Publish.
+| Route | Page |
+| --- | --- |
+| `/` | Main Rahi Rovers landing page |
+| `/college-events` | College events page |
+| Any unmatched route | Not-found page |
 
-## Can I connect a custom domain to my Lovable project?
+## Branding and assets
 
-Yes, you can!
+- The main logo is located at `src/assets/logo.png`.
+- The favicon and Apple touch icon are configured in `index.html`.
+- Destination and hero images are stored in `src/assets/`.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+When replacing the logo, keep the same filename or update both component imports and the icon links in `index.html`.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Updating dependencies
+
+Install a new package with npm so that both `package.json` and `package-lock.json` remain synchronized:
+
+```powershell
+npm install <package-name>
+```
+
+Refresh Browserslist browser compatibility data with:
+
+```powershell
+npx update-browserslist-db@latest
+```
+
+Run the build after dependency changes:
+
+```powershell
+npm run build
+```
+
+## Deployment
+
+The site can be deployed through Vercel's Git integration. When the Vercel project is connected to this repository and `main` is configured as the production branch, pushing to `main` automatically triggers a production deployment.
+
+```powershell
+git add -A
+git commit -m "Describe your changes"
+git push origin main
+```
+
+For safer collaboration, create a feature branch and open a pull request before merging into `main`.
+
+## Troubleshooting
+
+### Port 8080 is already in use
+
+Stop the process using the port, or start Vite on another port:
+
+```powershell
+npm run dev -- --port 8081
+```
+
+### Dependencies appear inconsistent
+
+Remove `node_modules` and reinstall from the npm lockfile:
+
+```powershell
+Remove-Item -Recurse -Force node_modules
+npm ci
+```
+
+### An old favicon is still visible
+
+Browsers cache favicons aggressively. Hard-refresh the page, clear the site's cached data, or open the site in a private browsing window.
