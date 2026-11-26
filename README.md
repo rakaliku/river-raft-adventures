@@ -94,7 +94,7 @@ river-raft-adventures/
 ## Branding and assets
 
 - The main logo is located at `src/assets/logo.png`.
-- The favicon and Apple touch icon are configured in `index.html`.
+- The public favicon and social-preview logo is located at `public/rahi-rovers-logo.png` and configured in `index.html`.
 - Destination and hero images are stored in `src/assets/`.
 
 When replacing the logo, keep the same filename or update both component imports and the icon links in `index.html`.
